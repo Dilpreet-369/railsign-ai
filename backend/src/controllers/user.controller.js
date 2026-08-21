@@ -10,7 +10,7 @@ const generateAccessTokenandRefreshToken = async (userID) => {
     const refreshToken = user.generateRefreshToken();
 
     user.refreshToken = refreshToken;
-    user.save({ validateBeforeSave: false });
+    await user.save({ validateBeforeSave: false });
 
     return { accessToken, refreshToken };
   } catch (error) {
@@ -29,7 +29,7 @@ const registerUser = asyncHandler(async (req, res) => {
 
   // res.status(200).json({ message: "User data received" });
 
-  if ([username, email, password].some((field) => field?.trim() === "")) {
+  if ([username, email, password].some((field) => !field?.trim())) {
     throw new apiError(400, "All fields are required compulsary!!");
   }
 
@@ -60,7 +60,7 @@ const registerUser = asyncHandler(async (req, res) => {
 
   return res
     .status(201)
-    .json(new apiRes(200, createdUser, "User registered succesfully"));
+    .json(new apiRes(201, createdUser, "User registered succesfully"));
 });
 
 const loginUser = asyncHandler(async (req, res) => {

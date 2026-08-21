@@ -1,1 +1,1 @@
-export const db_name = "todo";
+export const db_name = "railsign_ai";
