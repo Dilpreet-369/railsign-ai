@@ -1,0 +1,13 @@
+{
+  "name": "railsign-ai",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "backend": "npm run dev --prefix backend",
+    "frontend": "npm run dev --prefix frontend",
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.0"
+  }
+}
