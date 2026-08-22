@@ -80,7 +80,7 @@ export default function AvatarStage() {
             )}
             {current && (
               <div key={current.ts} className={`pop-in absolute bottom-2 left-2 text-[9px] font-bold px-2 py-1 rounded-md text-white ${meta.chip}`}>
-                {meta.label}
+                {/* {meta.label} */}
               </div>
             )}
           </div>

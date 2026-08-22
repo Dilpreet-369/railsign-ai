@@ -1,6 +1,7 @@
 import React from 'react'
-import { Moon, Sun } from 'lucide-react'
+import { Moon, Sun, Navigation } from 'lucide-react'
 import { useApp } from '../store/appContext'
+import { useNavigate } from 'react-router-dom'
 
 export default function Navbar() {
   const { view, switchView, lang, setLang, dark, toggleDark } = useApp()

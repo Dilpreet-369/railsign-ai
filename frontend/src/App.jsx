@@ -5,6 +5,7 @@ import { useApp } from './store/appContext'
 import Navbar from './components/Navbar'
 import AdminView from './pages/Adminview'
 import PublicDisplayView from './pages/Publicdisplayview'
+import StationNavigationView from './pages/StationNavigationView'
 
 function Shell() {
   const { view, dark } = useApp()
@@ -14,6 +15,7 @@ function Shell() {
       <main className="flex-1 overflow-hidden">
         <Routes>
           <Route path="/" element={view === 'admin' ? <AdminView /> : <PublicDisplayView />} />
+          <Route path="/navigation" element={<StationNavigationView />} />
         </Routes>
       </main>
     </div>
